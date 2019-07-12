@@ -8,6 +8,6 @@ def multi
   1000.times do |counter|
     multiple += counter if counter % 3 == 0 || counter % 5 == 0
   end
-  return multiple 
+  multiple 
 end
 puts multi
