@@ -3,11 +3,11 @@ def factor(number = 500)
   multi = 1
   (2..number/2).each do |x| 
     if number % x == 0 
-      puts multi *= x
-      @largest = x
+      multi *= x
+      largest = x
       number /= x
     end
   end
-  @largest
+  largest
 end
 puts factor(600851475143)
