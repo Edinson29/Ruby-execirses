@@ -4,14 +4,12 @@ A palindromic number reads the same both ways. The largest palindrome made from 
 Find the largest palindrome made from the product of two 3-digit numbers.
 =end
 def factor(number=0)
-  array = []
-  multi = 1
+  multi,largest = 1,nil
   (2..number/2).each do |x|
-    unless number % x != 0
-      multi *= x
-      largest = x
-      number /= x
-    end
+    next unless number % x == 0 
+    largest = x
+    multi *= x    
+    number /= x
   end
   largest
 end
