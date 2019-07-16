@@ -3,11 +3,11 @@ A palindromic number reads the same both ways. The largest palindrome made from 
 
 Find the largest palindrome made from the product of two 3-digit numbers.
 =end
-def factor(number=500)
+def factor(number=0)
   array = []
   multi = 1
   (2..number/2).each do |x|
-    if number % x == 0
+    unless number % x != 0
       multi *= x
       largest = x
       number /= x
