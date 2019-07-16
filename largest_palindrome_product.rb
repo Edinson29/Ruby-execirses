@@ -4,6 +4,7 @@ A palindromic number reads the same both ways. The largest palindrome made from 
 Find the largest palindrome made from the product of two 3-digit numbers.
 =end
 def palindromo
+  palindrome = []
   (100..999).each do |position|
     (100..999).each do |position2|
       product = position*position2
@@ -11,13 +12,10 @@ def palindromo
       numberArray = product.to_s.chars.map(&:to_i)
       arrayInvert = numberArray.reverse
       next unless numberArray == arrayInvert
-      @palindrome = numberArray
-      @position = position
-      @position2 = position2
+      palindrome = numberArray
     end
   end
   #return the array to integer
-  puts "#{@position} #{@position2}"
-  palindrome = @palindrome.join.to_i
+  numPalindromo = palindrome.join.to_i
 end
 puts palindromo
