@@ -3,19 +3,15 @@ A palindromic number reads the same both ways. The largest palindrome made from 
 
 Find the largest palindrome made from the product of two 3-digit numbers.
 =end
-def palindromo
-  palindrome = []
-  (100..999).each do |position|
-    (100..999).each do |position2|
+def palindromo_of_3_numbers
+  palindrome = 0
+  999.downto(500) do |position|
+    position.downto(500) do |position2|
       product = position*position2
-      #Here i converted the whole to array
-      numberArray = product.to_s.chars.map(&:to_i)
-      arrayInvert = numberArray.reverse
-      next unless numberArray == arrayInvert
-      palindrome = numberArray
+      next unless product.to_s  == product.to_s.reverse && product > palindrome
+      palindrome = product
     end
   end
-  #return the array to integer
-  numPalindromo = palindrome.join.to_i
+  palindrome
 end
-puts palindromo
+puts palindromo_of_3_numbers
