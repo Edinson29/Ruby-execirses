@@ -5,8 +5,8 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 =end
 def palindromo_of_3_numbers
   palindrome = 0
-  999.downto(500) do |position|
-    position.downto(500) do |position2|
+  999.downto(100) do |position|
+    position.downto(100) do |position2|
       product = position*position2
       next unless product.to_s  == product.to_s.reverse && product > palindrome
       palindrome = product
