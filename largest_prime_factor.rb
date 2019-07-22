@@ -1,16 +1,17 @@
-=begin
-A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+# The prime factors of 13195 are 5, 7, 13 and 29.
+# What is the largest prime factor of the number 600851475143 ?
 
-Find the largest palindrome made from the product of two 3-digit numbers.
-=end
-def factor(number=0)
-  multi,largest = 1,nil
-  (2..number/2).each do |x|
-    next unless number % x == 0 
-    largest = x
-    multi *= x    
-    number /= x
+class Largest_Prime_Factor
+  def factor(number = 0)
+    multi, largest = 1, nil
+    (2..number/2).each do |x|
+      next unless number % x == 0 
+      largest = x
+      multi *= x
+      number /= x
+    end
+    largest
   end
-  largest
 end
-puts factor(600851475143)
+largest_pf = Largest_Prime_Factor.new
+puts largest_pf.factor(600851475143)
