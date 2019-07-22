@@ -2,6 +2,9 @@
 # What is the 10 001st prime number?
 
 def prime(prime = 0)
+  # Top is the variable that is increased to be divided among the prime numbers,
+  # if the top variable is not divided by any prime number it becomes a prime
+  # number and is added to the array of prime numbers.
   top = 4
   array_prime = [2, 3]
   until array_prime.length == prime
