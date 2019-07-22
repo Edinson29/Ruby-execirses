@@ -3,11 +3,14 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 
 Find the sum of all the multiples of 3 or 5 below 1000.
 =end
-def multi
-  multiple = 0
-  1000.times do |counter|
-    multiple += counter if counter % 3 == 0 || counter % 5 == 0
+class Multiples_Of3_And5
+  def multi
+    multiple = 0
+    1000.times do |counter|
+      multiple += counter if counter % 3 == 0 || counter % 5 == 0
+    end
+    multiple 
   end
-  multiple 
 end
-puts multi
+multiples = Multiples_Of3_And5.new
+puts multiples.multi
