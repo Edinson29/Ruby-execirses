@@ -5,5 +5,5 @@ class LettersPalindromo
     word == word.reverse
   end
 end
-pal = LettersPalindromo.new
-puts pal.palindromo?('oso')
+letter = LettersPalindromo.new
+puts letter.palindromo?('oso')
