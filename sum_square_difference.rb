@@ -5,18 +5,22 @@
 #Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.
 #Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
-class Sum_Square_Difference
-  def sum_of_the_squares(num = 1)
-    (1..num).inject { |result, n| result + n ** 2 }
+class SumSquareDifference
+  def initialize(num1 = 0, num2 = 0)
+    @num1 = num1
+    @num2 = num2
   end
-  def square_of_the_sum(num = 1)
+  def sum_of_the_squares(num1)
+    (1..num1).inject { |result, n| result + n ** 2 }
+  end
+  def square_of_the_sum(num2)
     respuest = 0
-    (1..num).inject { |result, n| respuest = result + n }
+    (1..num2).inject { |result, n| respuest = result + n }
     respuest ** 2
   end
   def square_differentiator
-    square_of_the_sum(100) - sum_of_the_squares(100)
+    square_of_the_sum(@num1) - sum_of_the_squares(@num2)
   end
 end
-sum = Sum_Square_Difference.new
+sum = SumSquareDifference.new(100, 100)
 puts sum.square_differentiator
