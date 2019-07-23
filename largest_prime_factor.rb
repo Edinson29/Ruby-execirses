@@ -1,7 +1,7 @@
 # The prime factors of 13195 are 5, 7, 13 and 29.
 # What is the largest prime factor of the number 600851475143 ?
 
-class Largest_Prime_Factor
+class LargestPrimeFactor
   def factor(number = 0)
     multi, largest = 1, nil
     (2..number/2).each do |x|
@@ -13,5 +13,5 @@ class Largest_Prime_Factor
     largest
   end
 end
-largest_pf = Largest_Prime_Factor.new
+largest_pf = LargestPrimeFactor.new
 puts largest_pf.factor(600851475143)
