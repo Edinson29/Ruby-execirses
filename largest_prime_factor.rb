@@ -5,7 +5,7 @@ class LargestPrimeFactor
   def is_prime?(number = 0)     
     tests = Array (2..Math.sqrt(number))
     tests = tests.select { |x| number % x == 0 } 
-    tests.empty? ? true : false
+    tests.empty?
   end
   def factor(number = 0)
     counter = 2
