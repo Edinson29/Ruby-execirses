@@ -1,6 +1,9 @@
 # Create a method that receives a word and returns whether it is a palindrom or not
 
-def palindromo?(word)
-  word == word.reverse
+class LettersPalindromo
+  def palindromo?(word)
+    word == word.reverse
+  end
 end
-puts palindromo?('oso')
+letter = LettersPalindromo.new
+puts letter.palindromo?('oso')
