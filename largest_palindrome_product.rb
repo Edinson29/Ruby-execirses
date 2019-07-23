@@ -1,17 +1,21 @@
-=begin
-A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
-
-Find the largest palindrome made from the product of two 3-digit numbers.
-=end
-def palindromo_of_3_numbers
-  palindrome = 0
-  999.downto(100) do |position|
-    position.downto(100) do |position2|
-      product = position*position2
-      next unless product.to_s  == product.to_s.reverse && product > palindrome
-      palindrome = product
-    end
+# A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+# Find the largest palindrome made from the product of two 3-digit numbers.
+class MajorPalindromo
+  def initialize(digits)
+    @start = (10 ** digits) / 10
+    @top = (10 ** digits) - 1
   end
-  palindrome
+  def palindromo
+    palindrome = 0
+    @top.downto(@start) do |position|
+      position.downto(@start) do |position2|
+        product = position*position2
+        next unless product.to_s  == product.to_s.reverse && product > palindrome
+        palindrome = product
+      end
+    end
+    palindrome
+  end
 end
-puts palindromo_of_3_numbers
+palindromo_major = MajorPalindromo.new(3)
+puts palindromo_major.palindromo
