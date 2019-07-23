@@ -17,5 +17,5 @@ class MajorPalindromo
     palindrome
   end
 end
-palindromo_Major = MajorPalindromo.new(3)
-puts palindromo_Major.palindromo
+palindromo_major = MajorPalindromo.new(3)
+puts palindromo_major.palindromo
