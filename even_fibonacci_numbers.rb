@@ -4,16 +4,20 @@
 
 class FibonacciSeries
   def fibonacci(limit = 0)
-    a, b = 1, 2
-    c = a + b
-    acum = 2
-    while c < limit
+    if limit.is_a?Integer
+      a, b = 1, 2
       c = a + b
-      a = b
-      b = c
-      acum += c if c % 2 == 0
+      acum = 2
+      while c < limit
+        c = a + b
+        a = b
+        b = c
+        acum += c if c % 2 == 0
+      end
+      acum
+    else
+      "Error"
     end
-    acum
   end
 end
 object_fibonacci = FibonacciSeries.new
