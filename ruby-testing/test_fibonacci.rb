@@ -8,5 +8,6 @@ class FibonacciTest < Minitest::Test
     assert_equal 4613732, fibonacci_series.fibonacci(4_000_000)
     assert true, fibonacci_series.fibonacci(0)
     assert_equal "Error", fibonacci_series.fibonacci("hola")
+    assert fibonacci_series.fibonacci
   end
 end
