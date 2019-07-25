@@ -4,21 +4,17 @@
 
 class FibonacciSeries
   def fibonacci(limit = 0)
-    if limit.is_a?Integer
-      a, b = 1, 2
+    limit = limit.to_i
+    a = 0
+    b = 1
+    c = a + b
+    acum = 0
+    while c < limit
       c = a + b
-      acum = 2
-      while c < limit
-        c = a + b
-        a = b
-        b = c
-        acum += c if c % 2 == 0
-      end
-      acum
-    else
-      "Error"
+      a = b
+      b = c
+      acum += c if c % 2 == 0
     end
+    acum
   end
 end
-object_fibonacci = FibonacciSeries.new
-puts object_fibonacci.fibonacci(4_000_000)
