@@ -4,9 +4,11 @@
 
 class FibonacciSeries
   def fibonacci(limit = 0)
-    a, b = 1, 2
+    limit = limit.to_i
+    a = 0
+    b = 1
     c = a + b
-    acum = 2
+    acum = 0
     while c < limit
       c = a + b
       a = b
@@ -16,5 +18,3 @@ class FibonacciSeries
     acum
   end
 end
-object_fibonacci = FibonacciSeries.new
-puts object_fibonacci.fibonacci(4_000_000)
