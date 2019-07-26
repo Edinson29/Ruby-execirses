@@ -1,8 +1,16 @@
 # A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
 # Find the largest palindrome made from the product of two 3-digit numbers.
+class StringError < StandardError; end
 
 class MajorPalindromo
-  def initialize(digits)
+  def initialize(digits = 0)
+    parse_digits(digits)
+  end
+  def is_number?(obj)
+    obj.to_s == obj.to_i.to_s
+  end
+  def parse_digits(digits)
+    raise StringError, 'Ese no es un numero' unless is_number?(digits)
     digits = digits.to_i
     @start = (10 ** digits) / 10
     @top = (10 ** digits) - 1
@@ -19,5 +27,3 @@ class MajorPalindromo
     palindrome
   end
 end
-palindromo_major = MajorPalindromo.new("2")
-puts palindromo_major.palindromo
