@@ -10,5 +10,3 @@ class MultiplesOf3And5
     multiple 
   end
 end
-multiples = MultiplesOf3And5.new
-puts multiples.calculate(1000)
