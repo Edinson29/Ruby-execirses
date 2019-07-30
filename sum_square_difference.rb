@@ -7,20 +7,32 @@
 
 class SumSquareDifference
   def initialize(num1 = 0, num2 = 0)
-    @num1 = num1
-    @num2 = num2
+    @num1 = parse_num(num1)
+    @num2 = parse_num(num2)
   end
-  def sum_of_the_squares(num1)
-    (1..num1).inject { |result, n| result + n ** 2 }
+  def parse_num(num1)
+    raise TypeError, 'That is not number' unless is_number?(num1)
+    num1.to_i
   end
-  def square_of_the_sum(num2)
+  def parse_num(num2)
+    raise TypeError, 'That is not number' unless is_number?(num2)
+    num2.to_i
+  end
+  def is_number?(num1)
+    puts num1.to_s == num1.to_i.to_s
+  end
+  def is_number?(num2)
+    num2.to_s == num2.to_i.to_s
+  end
+  def sum_of_the_squares
+    (1..@num1).inject { |result, n| result + n ** 2 }
+  end
+  def square_of_the_sum
     respuest = 0
-    (1..num2).inject { |result, n| respuest = result + n }
+    (1..@num2).inject { |result, n| respuest = result + n }
     respuest ** 2
   end
   def square_differentiator
-    square_of_the_sum(@num1) - sum_of_the_squares(@num2)
+    square_of_the_sum - sum_of_the_squares
   end
 end
-sum = SumSquareDifference.new(100, 100)
-puts sum.square_differentiator
