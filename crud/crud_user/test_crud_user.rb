@@ -10,7 +10,7 @@ describe User do
   end
 
   # Test for first_name
-  it 'Return error when first_name is empty' do 
+  it 'Return error when first_name is empty' do
     err = lambda {user = User.new(id: '', first_name: '', last_name: 'Gutierrez', email: 'edinsongutierrez29@gmail.com', age: 20, address: '7de abril')
     user.create}.must_raise(EmptyError)
     err.message.must_match('This field is required please fill it out')
@@ -41,7 +41,7 @@ describe User do
     err.message.must_match('That is not a string')
   end
 
-  it 'Return error when last_name is empty' do 
+  it 'Return error when last_name is empty' do
     err = lambda {user = User.new(id: '', first_name: 'Edinson', last_name: '', email: 'edinsongutie@gmail.com', age: 20, address: '7de abril')
     user.create}.must_raise(EmptyError)
     err.message.must_match('This field is required please fill it out')
